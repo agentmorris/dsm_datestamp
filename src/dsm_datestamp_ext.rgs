@@ -1,0 +1,36 @@
+HKCR
+{
+	Dsm_datestamp.dsm_datestamp_ext.1 = s 'dsm_datestamp_ext Class'
+	{
+		CLSID = s '{607361BA-AFA1-42E7-B0AD-04BB50E8DCB1}'
+	}
+	Dsm_datestamp.dsm_datestamp_ext = s 'dsm_datestamp_ext Class'
+	{
+		CLSID = s '{607361BA-AFA1-42E7-B0AD-04BB50E8DCB1}'
+		CurVer = s 'Dsm_datestamp.dsm_datestamp_ext.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {607361BA-AFA1-42E7-B0AD-04BB50E8DCB1} = s 'dsm_datestamp_ext Class'
+		{
+			ProgID = s 'dsm_datestamp_ext'
+			VersionIndependentProgID = s 'Dsm_datestamp.dsm_datestamp_ext'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{ADDAFA51-CA4B-42B4-8B45-D6C7A0600CC0}'
+		}
+	}
+	NoRemove *
+	{
+	    NoRemove shellex 
+		{ 
+			NoRemove ContextMenuHandlers
+			{
+					ForceRemove DLLRegSvr = s '{607361BA-AFA1-42E7-B0AD-04BB50E8DCB1}'
+			}
+		}
+	}
+}

@@ -1,0 +1,38 @@
+// dsm_datestamp.idl : IDL source for dsm_datestamp.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (dsm_datestamp.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(B187DDCC-1398-47CD-A83C-61CD030A670F),
+		dual,
+		helpstring("Idsm_datestamp_ext Interface"),
+		pointer_default(unique)
+	]
+	interface Idsm_datestamp_ext : IDispatch
+	{
+	};
+
+[
+	uuid(ADDAFA51-CA4B-42B4-8B45-D6C7A0600CC0),
+	version(1.0),
+	helpstring("dsm_datestamp 1.0 Type Library")
+]
+library DSM_DATESTAMPLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(607361BA-AFA1-42E7-B0AD-04BB50E8DCB1),
+		helpstring("dsm_datestamp_ext Class")
+	]
+	coclass dsm_datestamp_ext
+	{
+		[default] interface Idsm_datestamp_ext;
+	};
+};
